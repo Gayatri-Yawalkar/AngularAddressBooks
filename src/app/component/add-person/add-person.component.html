@@ -1,0 +1,54 @@
+<title>Address Book Form</title>
+<app-headers></app-headers>
+<div class="form-content">
+    <form class="form" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <div class="form-head">
+            <div class="form-head-content">
+                PERSON ADDRESS FORM
+            </div>
+                <img class="cancel" alt="cancel" src="assets/images/cancel.jpeg"> 
+            
+        </div>
+            <label class="label text row-content" for="name">Full Name</label>
+            <input class="input row-content" type="text" id="name" name="name" required formControlName="name">
+        
+            <label class="label text row-content" for="phoneNo">Phone Number</label>
+            <input class="input row-content" type="text" id="phoneNo" name="phoneNo" required formControlName="phoneNo">
+            
+        
+
+            
+            <label class="label text row-content" for="address">Address</label>
+            <textarea class="input row-content textarea" id="address" name="address" required formControlName="address"></textarea>
+        
+         <div class="row-content">
+             
+            <label class="label text row-label" for="city">City</label>
+            <label class="label text row-label" for="state">State</label>
+            <label class="label text row-label" for="zipcode">Zip Code</label>
+            
+        </div> 
+            
+            <div class="row-content">
+                <select class="row-select text-select" id="city" name="City" (change)="changeCity($event)">
+                    <option>Select City</option>
+                    <option *ngFor="let item of cityList" value="{{item}}">{{item}}</option>
+                </select>
+                
+                <select  class="row-select text-select" id="state" name="State" (change)="changeState($event)">
+                    <option>Select State</option>
+                    <option *ngFor="let item of stateList" value="{{item}}">{{item}}</option>
+                </select>
+                
+                <input class="input-zip" type="text" id="zipCode" name="address" required formControlName="zipCode">
+            </div> 
+            
+       
+            
+            <div class="buttonParent">
+            <button type="submit" class="submitButton button" id="submitButton" >Add</button>
+            <button type="reset" class="button">Reset</button>
+       
+            </div>
+    </form>
+</div>

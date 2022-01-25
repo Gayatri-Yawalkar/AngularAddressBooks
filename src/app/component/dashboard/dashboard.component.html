@@ -1,7 +1,8 @@
+<app-headers></app-headers>
 <div class="main-content">
     <div class="header-content">
         <div class="person-detail-text">Person Details</div>
-        <button type="button" class="add-button">
+        <button type="button" class="add-button" (click)="gotoAddEmployeePage()">
             + Add Person
         </button>
     </div>
@@ -15,6 +16,32 @@
                 <th>State</th>
                 <th>Zip Code</th>
                 <th>Phone Number</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Gayatri Yawalkar</td>
+                <td>Near Sane Guruji School</td>
+                <td>Akola</td>
+                <td>Maharashtra</td>
+                <td>444004</td>
+                <td>8978786756</td>
+                <td>
+                    <img id="1" alt="delete" src="assets/images/delete.svg">
+                    <img id="1" alt="edit" src="assets/images/edit.svg">
+                </td>
+            </tr>
+            <tr *ngFor="let item of personList">
+                <td></td>
+                <td>{{item.name}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.state}}</td>
+                <td>{{item.zipCode}}</td>
+                <td>{{item.phoneNo}}</td>
+                <td>
+                    <img id="1" alt="delete" src="assets/images/delete.svg">
+                    <img id="1" alt="edit" src="assets/images/edit.svg">
+                </td>
             </tr>
         </table>
     </div>
